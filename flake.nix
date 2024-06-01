@@ -19,11 +19,12 @@
         devShells.default = with pkgs; mkShell {
           buildInputs = [
             nodejs_22
-            (rust-bin.stable.latest.default.override
-              {
-                targets = [ "wasm32-unknown-unknown" ];
-                extensions = [ "rust-analyzer" "rust-src" "rust-std" ];
-              })
+            gnumake
+            cmake
+            (rust-bin.stable."1.77.2".default.override {
+              extensions = [ "rust-src" ];
+              targets = [ "wasm32-unknown-unknown" ];
+            })
           ];
         };
       }
