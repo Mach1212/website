@@ -1,0 +1,4 @@
+notes/*
+!notes/specs/
+!notes/specs/**
+.DS_Store
